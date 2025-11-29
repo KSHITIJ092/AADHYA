@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-11-28T22:08:13.668334",
+  "patient_forecast": 28.3,
+  "conf_int": [
+    24.1,
+    32.6
+  ],
+  "supply_forecast": {
+    "oxygen_cylinder": 731.7,
+    "paracetamol_tablet": 4779.3,
+    "iv_fluid_bag": 2536.5,
+    "nebulizer_kit": 1047.6,
+    "platelet_units": 85.6,
+    "bandage_roll": 5613.9,
+    "syringe": 1952.1,
+    "antibiotic_injection": 385.2
+  },
+  "anomaly": true,
+  "optimizer": {
+    "purchase_orders": [],
+    "staff_plan": []
+  },
+  "explain": [
+    "epidemic_trend_score +18%",
+    "pm25 +11%",
+    "tp_lag_1 +5%"
+  ],
+  "departments": [
+    {
+      "department": "Emergency",
+      "patient_forecast": 4.686197256371236,
+      "is_anomaly": 1
+    },
+    {
+      "department": "Pulmonology",
+      "patient_forecast": 4.828451084746072,
+      "is_anomaly": 1
+    },
+    {
+      "department": "Cardiology",
+      "patient_forecast": 4.686197256371236,
+      "is_anomaly": 1
+    },
+    {
+      "department": "ICU",
+      "patient_forecast": 4.653788283241793,
+      "is_anomaly": 1
+    },
+    {
+      "department": "Pediatrics",
+      "patient_forecast": 4.828451084746072,
+      "is_anomaly": 1
+    },
+    {
+      "department": "General",
+      "patient_forecast": 4.653788283241793,
+      "is_anomaly": 1
+    }
+  ]
+}

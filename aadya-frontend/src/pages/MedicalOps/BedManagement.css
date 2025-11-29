@@ -1,0 +1,93 @@
+/* Balanced BedManagement - bm2- prefix (equal height grid, left stretches, right scrolls) */
+.bm2-root{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto;color:#07283f;background:transparent;padding:14px;box-sizing:border-box}
+
+/* header */
+.bm2-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:12px}
+.bm2-title{font-size:18px;font-weight:900;color:#07283f;margin:0}
+.bm2-sub{font-size:13px;color:#5b718a;margin-top:4px;font-weight:600}
+.bm2-actions{display:flex;gap:8px}
+
+/* buttons */
+.bm2-btn{padding:8px 12px;border-radius:10px;font-weight:800;cursor:pointer;border:1px solid transparent;background:#fff}
+.bm2-ghost{border:1px solid #e7f0ff;color:#2563eb;background:#fff}
+.bm2-outline{border:1px solid #e6eefb;color:#1156d0;background:transparent}
+.bm2-primary{background:linear-gradient(180deg,#2aa9f7,#6b46ff);color:#fff;border:none}
+.bm2-small{padding:6px 10px;font-size:13px}
+
+/* equal-height two-column grid */
+.bm2-two-col{display:grid;grid-template-columns:50% 50%;gap:18px;align-items:stretch}
+
+/* left */
+.bm2-left{display:flex;flex-direction:column;height:100%}
+.bm2-icu-card{background:#fff;border-radius:14px;padding:14px;border:1px solid #eef6fb;box-shadow:0 12px 28px rgba(6,34,60,0.04);display:flex;flex-direction:column;height:100%}
+.bm2-icu-stretch{min-height:280px}
+
+/* head */
+.bm2-icu-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.bm2-icu-title{font-weight:900;color:#07283f}
+.bm2-icu-meta{font-weight:700;color:#4b6b84}
+.bm2-icu-small{font-size:12px;color:#8aa0b1}
+
+/* chart: flex-grow to fill left column height */
+.bm2-icu-chart{width:100%;height:100%;flex:1;display:block}
+
+/* KPIs pinned to bottom */
+.bm2-kpis{display:flex;gap:10px;margin-top:12px}
+.bm2-kpi{flex:1;background:linear-gradient(180deg,#fbfdff,#ffffff);padding:10px;border-radius:10px;border:1px solid #f1f7fb;text-align:center;box-shadow:0 8px 18px rgba(8,34,60,0.02)}
+.bm2-kpi-label{font-size:12px;color:#6a8596;font-weight:800}
+.bm2-kpi-val{font-size:18px;color:#07283f;font-weight:900;margin-top:6px}
+
+/* right: scrollable list so left can match height */
+.bm2-right{display:flex;flex-direction:column;gap:12px;min-height:260px}
+.bm2-right-scroll{max-height:calc(100vh - 200px);overflow:auto;padding-right:6px}
+
+/* ward card */
+.bm2-ward{display:flex;align-items:center;gap:16px;padding:12px;border-radius:12px;background:#fff;border:1px solid #eef6fb;box-shadow:0 6px 16px rgba(6,34,60,0.03)}
+.bm2-ward-left{min-width:210px}
+.bm2-ward-name{font-weight:900;color:#07283f;font-size:15px}
+.bm2-ward-meta{font-size:12px;color:#4b6b84;margin-top:6px}
+
+/* bar and percent */
+.bm2-ward-mid{flex:1;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.bm2-bar{width:100%;height:14px;background:#eef7ff;border-radius:12px;overflow:hidden;border:1px solid #eaf5ff}
+.bm2-fill{height:100%;transition:width .34s cubic-bezier(.2,.9,.3,1);border-radius:12px}
+
+/* humanized palettes */
+.bm2-ok{background:linear-gradient(180deg,#9be7d0,#2fae89)}
+.bm2-mid{background:linear-gradient(180deg,#d3f3e6,#59c089)}
+.bm2-high{background:linear-gradient(180deg,#ffe9c2,#ffbf4f)}
+.bm2-critical{background:linear-gradient(180deg,#ffdbe0,#ff8b9a)}
+
+.bm2-pct{font-weight:900;color:#0b3a66;font-size:14px;min-width:56px;text-align:left}
+
+/* actions */
+.bm2-ward-actions{display:flex;flex-direction:column;gap:8px;width:110px;align-items:center}
+
+/* drawer */
+.bm2-drawer{position:fixed;top:244px;right:550px;z-index:2200}
+.bm2-drawer-inner{width:360px;background:#fff;border-radius:12px;padding:16px;border:2px solid #071323;box-shadow:0 22px 48px rgba(6,34,60,0.12)}
+.bm2-drawer-head{display:flex;justify-content:space-between;align-items:center}
+.bm2-drawer-title{font-weight:900;color:#07283f}
+.bm2-drawer-sub{font-size:12px;color:#667e93}
+.bm2-drawer-grid{margin-top:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.bm2-k{font-size:12px;font-weight:700;color:#4b6b84}
+.bm2-v{font-size:15px;font-weight:900;color:#07283f}
+.bm2-drawer-actions{margin-top:14px;display:flex;gap:10px;justify-content:flex-end}
+
+/* Notice / toast (top-right anchored inside component) */
+.bm2-notice{position:fixed;top:300px;right:500px;z-index:2300;min-width:500px;background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 18px 46px rgba(6,34,60,0.12);display:flex;align-items:center;gap:12px;border:2px solid #070b0d}
+.bm2-notice-left{flex:1}
+.bm2-notice-title{font-weight:900;color:#07283f;margin-bottom:4px}
+.bm2-notice-msg{font-size:13px;color:#425b6e}
+.bm2-notice .bm2-btn{padding:6px 10px;border-radius:8px}
+
+/* notice variants */
+.bm2-notice-info{border-left:6px solid #2aa9f7}
+.bm2-notice-success{border-left:6px solid #2fae89}
+.bm2-notice-error{border-left:6px solid #ff6b6b}
+
+/* responsive stack */
+@media (max-width:1100px){
+  .bm2-two-col{grid-template-columns:1fr;}.bm2-right-scroll{max-height:none}
+  .bm2-ward-left{min-width:140px}
+}

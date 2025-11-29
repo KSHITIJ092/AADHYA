@@ -1,0 +1,6 @@
+timestamp,area_id,area_name,temperature_c,humidity,pm25,aqi_est,festival_flag,epidemic_summary,pm25_lag1,pm25_roll3,temp_lag1,temp_roll3,surge_risk,expected_patients_hr,oxygen_extra,nebulizer_kits,iv_fluids,staff_extra
+2025-11-27 10:20:10.376970+00:00,KDMC_KALYAN,KDMC_Kalyan,32.73,100,,,1,{},,,,32.73,10,33,1,1,1,1
+2025-11-27 10:20:08.045026+00:00,MUM_BANDRA,Mumbai_Suburban_Bandra,30.48,57,,,1,{},,,,30.48,10,33,1,1,1,1
+2025-11-27 10:20:06.144803+00:00,MUM_CITY,Mumbai_City_Colaba,31.05,48,,,1,{},,,,31.05,10,44,1,1,1,1
+2025-11-27 10:20:08.987913+00:00,NAVI_VASHI,NaviMumbai_Vashi,30.96,51,,,1,{},,,,30.96,10,33,1,1,1,1
+2025-11-27 10:20:11.347100+00:00,THANE,Thane,32.74,95,,,1,{},,,,32.74,10,33,1,1,1,1

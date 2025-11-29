@@ -1,0 +1,244 @@
+/* AdminForecastPanel.css
+   Complete styles for AdminForecastPanel.jsx
+   Prefix: admfor-
+*/
+
+.admfor-root {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 28px rgba(12,60,120,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: Inter, "Segoe UI", Roboto, Arial, system-ui;
+  color: #0b2b3b;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* header */
+.admfor-header {
+  display: flex;
+  flex-direction: column;
+  /* gap: 4px; */
+}
+.admfor-title {
+  font-weight: 900;
+  color: #092e4b;
+  font-size: 15px;
+}
+.admfor-meta {
+  font-size: 12px;
+  color: #5a718a;
+}
+
+/* top KPI row */
+.admfor-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.admfor-left {
+  display: flex;
+  gap: 12px;
+  align-items:center;
+}
+.admfor-kv {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+.admfor-k {
+  font-weight: 800;
+  color: #38536b;
+  font-size: 12px;
+}
+.admfor-v {
+  font-weight: 900;
+  color: #0b3a66;
+  font-size: 20px;
+}
+
+/* right side peak block */
+.admfor-peak {
+  background: #fbfdff;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 84px;
+  box-shadow: inset 0 -1px 0 rgba(11,58,102,0.02);
+}
+.admfor-peak-time {
+  font-weight: 900;
+  color: #0b3a66;
+  font-size: 16px;
+}
+.admfor-peak-pts {
+  color: #4b6b84;
+  font-weight: 800;
+}
+
+/* chart container */
+.admfor-chart-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* legend row */
+.admfor-chart-legend {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.admfor-legend-item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 800;
+  color: #254b63;
+  font-size: 13px;
+}
+.admfor-legend-dot {
+  width: 12px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
+}
+
+/* Legend swatches - site aligned */
+.admfor-legend-dot.p90 {
+  background: linear-gradient(180deg,#fff6f0,#fff1e6);
+  border: 1px solid rgba(255,140,60,0.12);
+}
+.admfor-legend-dot.p50 {
+  background: linear-gradient(180deg,#e9f2ff,#d6eaff);
+  border: 1px solid rgba(45,131,255,0.14);
+}
+.admfor-legend-dot.p10 {
+  background: linear-gradient(180deg,#e9fff6,#d6f7e8);
+  border: 1px solid rgba(40,170,110,0.12);
+}
+
+/* Chart area */
+.admfor-chart-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 6px 0 2px 0;
+}
+
+/* svg holder */
+.admfor-svg-holder {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* placeholder */
+.admfor-chart-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8aa0b4;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 24px;
+}
+
+/* tooltip */
+.admfor-tooltip-forecast {
+  position: absolute;
+  z-index: 200;
+  background: #08325a;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 0 8px 22px rgba(8,30,60,0.22);
+  min-width: 140px;
+}
+.admfor-tooltip-row {
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:6px;
+}
+.admfor-tooltip-row:last-child { margin-bottom:0; }
+.admfor-tooltip-k { color: #bcd6ff; font-weight:800; }
+.admfor-tooltip-v { color: #fff; font-weight:900; }
+
+/* area select and labels */
+.admfor-area-select {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+.admfor-label {
+  font-weight: 800;
+  color: #27506a;
+  font-size: 13px;
+  min-width: 90px;
+}
+.admfor-select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #eef6fb;
+  background: #fbfdff;
+  font-weight: 800;
+}
+
+/* outbreak list */
+.admfor-outbreaks {
+  margin-top: 8px;
+  border-top: 1px dashed #eef6fb;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.admfor-out-title {
+  font-weight: 900;
+  color: #0b3a66;
+}
+.admfor-out-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.admfor-out-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fbfdff;
+  box-shadow: inset 0 -1px 0 rgba(12,60,120,0.02);
+}
+.admfor-out-h {
+  font-weight: 900;
+  color: #113a58;
+}
+.admfor-out-v {
+  color: #4b6b84;
+  font-weight: 800;
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+  .admfor-top { flex-direction: column; align-items: flex-start; }
+  .admfor-chart-area { overflow-x: auto; padding-left: 6px; }
+}
+
+/* accessibility */
+.admfor-select:focus, .admfor-area-select select:focus {
+  outline: 3px solid rgba(17,86,208,0.14);
+  border-radius: 6px;
+}

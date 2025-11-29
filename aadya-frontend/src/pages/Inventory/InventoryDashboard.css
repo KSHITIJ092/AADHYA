@@ -1,0 +1,149 @@
+/* src/pages/Inventory/InventoryDashboard.css
+   Unique prefix: invdash-
+   Full styling for the Inventory Dashboard page.
+*/
+
+.invdash-root {
+  font-family: Inter, "Segoe UI", Roboto, Arial, system-ui;
+  color: #0b2b3b;
+  padding: 14px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg,#f7fbff,#f1f7fb);
+}
+
+/* header */
+.invdash-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.invdash-title { font-weight:900; font-size:18px; color:#0b3a66; margin:0; }
+.invdash-sub { color:#5b718a; font-size:13px; margin-top:2px; }
+
+/* header actions */
+.invdash-header-actions { display:flex; gap:10px; align-items:center; }
+.invdash-btn {
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid rgba(17,86,208,0.06);
+  background: #fff;
+  cursor:pointer;
+  font-weight:800;
+}
+.invdash-btn-primary { background: linear-gradient(180deg,#1e6df0,#1156d0); color:#fff; border:none; }
+.invdash-btn-ghost { background: transparent; border:1px solid #e8f1ff; color:#155fd6; }
+.invdash-btn-outline { background:transparent; border:1px solid #e8f2ff; color:#155fd6; }
+
+/* KPIs row */
+.invdash-kpis { display:flex; gap:12px; margin-bottom:14px; }
+.invdash-kpi { background: white; padding:10px 12px; border-radius:10px; box-shadow:0 8px 18px rgba(12,60,120,0.03); min-width:180px; }
+.invdash-kpi-title { color:#4b6b84; font-weight:800; font-size:12px; }
+.invdash-kpi-value { font-weight:900; color:#0b3a66; font-size:20px; margin-top:6px; }
+.invdash-kpi-hint { color:#6b7d91; font-size:12px; margin-top:4px; }
+
+/* grid layout */
+.invdash-grid {
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:12px;
+  align-items:start;
+}
+
+/* left column panels */
+.invdash-left { display:flex; flex-direction:column; gap:12px; }
+.invdash-panel { background:white; border-radius:12px; padding:12px; box-shadow:0 10px 28px rgba(12,60,120,0.04); }
+
+/* panel header */
+.invdash-panel-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.invdash-panel-title { font-weight:900; color:#0b3a66; margin:0; }
+.invdash-panel-controls { display:flex; gap:8px; align-items:center; }
+
+/* input */
+.invdash-input { padding:8px 10px; border-radius:8px; border:1px solid #eef6fb; background:#fbfdff; font-weight:700; }
+
+/* inventory grid - item cards */
+.invdash-inventory-grid { display:flex; flex-direction:column; gap:10px; max-height:520px; overflow:auto; padding-right:6px; }
+.invdash-item-card { border-radius:10px; padding:12px; background:linear-gradient(180deg,#ffffff,#fbfdff); display:flex; flex-direction:column; gap:8px; box-shadow: 0 6px 18px rgba(12,60,120,0.03); border:1px solid #f3f7fb; }
+.invdash-item-top { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+.invdash-item-left { max-width:66%; }
+.invdash-item-name { font-weight:900; color:#082b46; font-size:15px; }
+.invdash-item-meta { color:#5a718a; font-size:12px; margin-top:6px; }
+.invdash-item-sub { color:#6b7d91; font-size:12px; margin-top:6px; }
+
+/* stock & critical pill */
+.invdash-item-right { display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+.invdash-item-stock { font-weight:900; font-size:20px; color:#0b3a66; }
+.invdash-item-unit { font-weight:700; color:#6b7d91; font-size:12px; margin-left:6px; }
+.invdash-item-reorder { padding:6px 8px; border-radius:8px; font-weight:900; border:1px solid; }
+
+/* bottom area of card */
+.invdash-item-bottom { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.invdash-item-forecast { display:flex; gap:12px; align-items:center; }
+.invdash-item-forecast-row { display:flex; flex-direction:column; gap:4px; min-width:84px; }
+.invdash-item-forecast-label { color:#4b6b84; font-weight:800; font-size:12px; }
+.invdash-item-forecast-value { font-weight:900; color:#0b3a66; }
+
+/* actions */
+.invdash-item-actions { display:flex; gap:8px; }
+
+/* transactions */
+.invdash-transactions { display:flex; flex-direction:column; gap:8px; max-height:220px; overflow:auto; }
+.invdash-transaction-row { display:flex; justify-content:space-between; padding:8px; border-radius:8px; background:#fbfdff; border:1px solid #f3f7fb; }
+.invdash-transaction-left { display:flex; flex-direction:column; gap:4px; }
+.invdash-transaction-item { font-weight:800; color:#082b46; }
+.invdash-transaction-meta { color:#6b7d91; font-size:12px; }
+.invdash-transaction-right { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+.invdash-transaction-qty.pos { color:#2b8a55; font-weight:900; }
+.invdash-transaction-qty.neg { color:#bf3b3b; font-weight:900; }
+.invdash-transaction-time { color:#6b7d91; font-size:11px; }
+
+/* right column */
+.invdash-right { display:flex; flex-direction:column; gap:12px; }
+
+/* forecast panel */
+.invdash-forecast-body { display:flex; gap:12px; align-items:flex-start; padding:8px 4px; }
+.invdash-forecast-chart { flex:0 0 260px; display:flex; align-items:center; justify-content:center; }
+.invdash-forecast-summary { flex:1; display:flex; flex-direction:column; gap:12px; }
+.invdash-forecast-stat { background:#fbfdff; padding:8px; border-radius:8px; border:1px solid #f1f7fb; }
+.invdash-forecast-label { color:#4b6b84; font-weight:800; font-size:13px; }
+.invdash-forecast-value { font-weight:900; color:#0b3a66; font-size:18px; margin-top:6px; }
+
+/* alerts panel */
+.invdash-alerts-list { display:flex; flex-direction:column; gap:8px; min-height:120px; }
+.invdash-alert-empty { color:#4b6b84; font-weight:800; padding:8px; }
+.invdash-alert-row { padding:10px; border-radius:8px; display:flex; gap:10px; align-items:center; justify-content:space-between; border:1px solid #eef6fb; }
+.invdash-alert-critical { background:#fff1f0; border-color:#ffb8b8; color:#9b2222; font-weight:900; }
+.invdash-alert-warning { background:#fff8e6; border-color:#ffd08a; color:#8a6500; font-weight:900; }
+.invdash-alert-info { background:#eef7ff; border-color:#bfe0ff; color:#1f5fb4; font-weight:900; }
+
+/* warehouse monitor */
+.invdash-warehouse-body { display:flex; flex-direction:column; gap:8px; padding:6px 0; }
+.invdash-warehouse-row { display:flex; justify-content:space-between; padding:6px 8px; border-radius:8px; background:#fbfdff; border:1px solid #f1f7fb; }
+.invdash-warehouse-label { font-weight:900; color:#113a58; }
+.invdash-warehouse-value { font-weight:800; color:#27465f; }
+
+/* POs list */
+.invdash-pos-list { display:flex; flex-direction:column; gap:18px; min-height:120px; }
+.invdash-po-row { display:flex; justify-content:space-between; padding:8px; border-radius:8px; background:#fbfdff; border:1px solid #f1f7fb; align-items:center; }
+.invdash-po-item { font-weight:900; color:#082b46; }
+.invdash-po-meta { color:#6b7d91; font-size:12px; }
+
+/* drawer/modal */
+.invdash-drawer { position:fixed; right:600px; top:200px; width:360px; z-index:1200; }
+.invdash-drawer-inner { background:white; padding:14px; border-radius:10px; box-shadow: 0 18px 48px rgba(6,34,60,0.12); border:1px solid #01121c; }
+.invdash-drawer-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.invdash-drawer-body { color:#3b5569; }
+
+/* vertical chart svg tuning */
+.invdash-vchart { display:block; }
+
+/* responsive */
+@media (max-width:1100px) {
+  .invdash-grid { grid-template-columns: 1fr; }
+  .invdash-right { order:2; }
+  .invdash-left { order:1; }
+}
+
+/* end */

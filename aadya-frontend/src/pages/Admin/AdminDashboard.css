@@ -1,0 +1,348 @@
+/* AdminDashboard.css
+   Full styles for AdminDashboard.jsx
+   Class prefix: admdash-
+   Final optimized, compact header, bed flow UI, map styles, and sidebar.
+*/
+
+/* Root & defaults */
+.admdash-root {
+  --primary: #1156d0;
+  --muted: #6b7d91;
+  --bg-start: #f7fbff;
+  --bg-end: #f1f7fb;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, system-ui;
+  background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  min-height: 100vh;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  color: #0b2b3b;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- HEADER (compact, no extra whitespace) ---------- */
+.admdash-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom: 10px; /* tightened */
+  padding: 8px 6px;
+  background: transparent;
+}
+
+/* left group - logo + titles */
+.admdash-header-left {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* logo image */
+.admdash-logo-img {
+  height: 44px;
+  width: 44px;
+  border-radius:10px;
+  object-fit:contain;
+  display:block;
+  box-shadow: 0 8px 22px rgba(11,97,216,0.10);
+}
+
+/* title group */
+.admdash-header-titles { display:flex; flex-direction:column; gap:2px; }
+.admdash-title {
+  font-weight:800;
+  font-size:26px;
+  color:#07283f;
+  line-height:1;
+}
+.admdash-sub {
+  font-size:18px;
+  color:#4b6b84;
+  line-height:1;
+}
+
+/* right group */
+.admdash-header-right {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.admdash-lastupdate { font-size:12px; color:#425b6b; font-weight:700; }
+
+/* buttons */
+.admdash-btn {
+  padding:9px 12px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:800;
+  box-shadow: 0 6px 18px rgba(9,72,140,0.06);
+  background: #fff;
+}
+.admdash-btn-primary {
+  background: linear-gradient(180deg,#1e6df0,#1156d0);
+  color: white;
+  border: none;
+}
+.admdash-btn-ghost {
+  background: transparent;
+  border: 1px solid #e8f1ff;
+  color: var(--primary);
+  padding:8px 10px;
+}
+
+/* ---------- LAYOUT ---------- */
+.admdash-main {
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap:16px;
+  align-items:start;
+}
+
+/* left column */
+.admdash-main-left { display:flex; flex-direction:column; gap:12px; }
+
+/* section large (map etc) */
+.admdash-section-large {
+  background:white;
+  border-radius:12px;
+  padding:12px;
+  box-shadow: 0 10px 28px rgba(11,74,122,0.04);
+}
+.admdash-section-title {
+  font-weight:800;
+  font-size:15px;
+  color:#082b46;
+  margin:0 0 10px 0;
+}
+
+/* two-up row (cards) */
+.admdash-two-up { display:flex; gap:12px; }
+.admdash-card {
+  background:white;
+  padding:12px;
+  border-radius:10px;
+  box-shadow: 0 8px 18px rgba(12,60,120,0.03);
+  flex:1;
+}
+
+/* generic card title */
+.admdash-card-title { font-weight:800; color:#0a3b66; margin:0 0 8px 0; }
+
+/* ---------- SURGE MAP LEGEND (keeps as existing) ---------- */
+.admdash-map-panel { position: relative; border-radius: 10px; overflow: hidden; }
+.admdash-map-legend {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: rgba(255,255,255,0.95);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(10,40,80,0.08);
+  z-index: 1000;
+  font-weight: 800;
+  font-size: 13px;
+}
+.admdash-map-legend-row { display:flex; gap:8px; align-items:center; margin-top:6px; color:#29465b; }
+.admdash-dot { width:12px; height:12px; border-radius:4px; display:inline-block; }
+.admdash-dot.high { background:#ffccd1; border:1px solid #ff8b95; }
+.admdash-dot.med { background:#fff3cd; border:1px solid #ffd08a; }
+.admdash-dot.low { background:#e6f7ee; border:1px solid #b5e9c7; }
+
+/* ---------- BED FLOW & MANPOWER (expanded compact UI) ---------- */
+
+/* wrapper */
+.admdash-bedcard { display:flex; flex-direction:column; gap:12px; padding:12px; border-radius:10px; }
+
+/* header of bed card */
+.admdash-bedcard-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:4px;
+}
+
+/* small KPIs */
+.admdash-bed-kpis { display:flex; gap:10px; align-items:center; }
+.admdash-kpi {
+  text-align:center;
+  min-width:78px;
+  padding:6px 10px;
+  border-radius:8px;
+  background: linear-gradient(180deg,#fbfdff,#fff);
+  box-shadow: inset 0 -1px 0 rgba(12,60,120,0.02);
+  border: 1px solid #f3f7fb;
+}
+.admdash-kpi-label { font-size:11px; color:#597685; font-weight:800; }
+.admdash-kpi-value { font-size:16px; color:var(--primary); font-weight:900; margin-top:4px; }
+
+/* list of wards */
+.admdash-bed-list { display:flex; flex-direction:column; gap:10px; }
+
+/* each ward item */
+.admdash-bed-item {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  padding:10px;
+  border-radius:10px;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  box-shadow: 0 6px 18px rgba(12,60,120,0.03);
+  border:1px solid #f3f7fb;
+}
+
+/* left block */
+.admdash-bed-main { display:flex; gap:14px; align-items:flex-start; flex:1; }
+.admdash-bed-info { min-width:140px; }
+.admdash-bed-name { font-weight:900; color:#082b46; font-size:14px; }
+.admdash-bed-meta { font-size:12px; color:#5b718a; margin-top:4px; }
+.admdash-time { color:#155fd6; font-weight:900; }
+
+/* stats area */
+.admdash-bed-stats { display:flex; flex-direction:column; gap:8px; flex:1; min-width:200px; }
+.admdash-progress-row { display:flex; align-items:center; gap:10px; }
+.admdash-progress-label { font-weight:800; color:#3b5569; min-width:70px; font-size:13px; }
+
+/* progress bar */
+.admdash-progress-wrap { display:flex; align-items:center; gap:8px; flex:1; }
+.admdash-progress-bg {
+  height:12px;
+  background:#eef7ff;
+  border-radius:8px;
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #eaf5ff;
+}
+.admdash-progress-fill {
+  height:100%;
+  border-radius:8px 0 0 8px;
+  transition: width 420ms cubic-bezier(.2,.9,.3,1);
+  box-shadow: inset 0 -2px 8px rgba(0,0,0,0.04);
+}
+/* color-coded fills */
+.admdash-progress-fill.normal { background: linear-gradient(180deg,#9ee6b9,#56c179); }
+.admdash-progress-fill.moderate { background: linear-gradient(180deg,#ffeaa0,#ffc857); }
+.admdash-progress-fill.high { background: linear-gradient(180deg,#ffb78f,#ff7b5a); }
+.admdash-progress-fill.critical { background: linear-gradient(180deg,#ff9e9e,#ff5a5a); }
+
+/* number at right of progress */
+.admdash-progress-number { min-width:42px; font-weight:900; color:#102d4a; font-size:13px; }
+
+/* mini stats row */
+.admdash-mini-row { display:flex; gap:12px; margin-top:6px; }
+.admdash-mini { display:flex; flex-direction:column; gap:4px; text-align:center; min-width:66px; }
+.admdash-mini-label { font-size:11px; color:#6b7d91; font-weight:800; }
+.admdash-mini-val { font-weight:900; color:#0b3a66; }
+
+/* actions & suggestion */
+.admdash-bed-actions { display:flex; flex-direction:column; gap:8px; align-items:flex-end; min-width:170px; }
+.admdash-suggestion { padding:6px 10px; border-radius:8px; font-weight:900; font-size:13px; }
+.admdash-suggestion.normal { background: #e6f7ee; color:#2e8a4a; border:1px solid rgba(46,138,74,0.08); }
+.admdash-suggestion.moderate { background:#fff8e6; color:#a86a05; border:1px solid rgba(168,106,5,0.06); }
+.admdash-suggestion.high { background:#fff1f0; color:#c34834; border:1px solid rgba(195,72,52,0.06); }
+.admdash-suggestion.critical { background:#fff0f0; color:#a91f1f; border:1px solid rgba(169,31,31,0.06); }
+
+/* action buttons */
+.admdash-action-buttons { display:flex; gap:8px; }
+.admdash-action-buttons .admdash-btn { padding:8px 10px; border-radius:8px; font-weight:900; box-shadow:none; }
+.admdash-action-buttons .admdash-btn:first-child { background:transparent; border:1px solid #e8f3ff; color:var(--primary); }
+.admdash-action-buttons .admdash-btn:last-child { background: linear-gradient(180deg,#1e6df0,#1156d0); color:white; }
+
+/* footer */
+.admdash-bedcard-footer {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding-top:8px;
+  border-top:1px dashed #eef6fb;
+}
+.admdash-bed-footer-title { font-weight:900; color:#0b3a66; }
+.admdash-bed-footer-sub { font-size:12px; color:#6b7d91; margin-top:4px; }
+.admdash-bed-footer-right .admdash-btn { padding:10px 14px; border-radius:10px; }
+
+/* ---------- STAFF LIST ---------- */
+.admdash-staff-controls { margin-bottom:10px; }
+.admdash-input {
+  width:95%;
+  padding:9px 10px;
+  border-radius:10px;
+  border:1px solid #eef6fb;
+  background:#fbfdff;
+  font-weight:700;
+}
+.admdash-staff-list { display:flex; flex-direction:column; gap:8px; }
+.admdash-staff-item {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px;
+  border-radius:8px;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  box-shadow: 0 4px 12px rgba(12,60,120,0.03);
+}
+.admdash-staff-name { font-weight:800; color:#082b46; }
+.admdash-meta { color:#5a718a; font-size:12px; }
+
+/* ---------- RIGHT SIDEBAR ---------- */
+.admdash-main-right { display:flex; flex-direction:column; gap:12px; }
+
+/* audit & inventory */
+.admdash-audit-card, .admdash-inventory-card {
+  padding:12px;
+  border-radius:10px;
+  background:white;
+  box-shadow: 0 8px 20px rgba(12,60,120,0.03);
+}
+.admdash-audit-body { display:flex; flex-direction:column; gap:8px; }
+.admdash-audit-row { display:flex; justify-content:space-between; color:#3f5569; }
+.admdash-inv-list { display:flex; flex-direction:column; gap:10px; }
+.admdash-inv-row { display:flex; justify-content:space-between; align-items:center; padding:8px; background:#fbfdff; border-radius:8px; }
+
+/* outline button */
+.admdash-btn-outline {
+  background:transparent;
+  border:1px solid #e8f2ff;
+  padding:8px 10px;
+  border-radius:8px;
+  color:var(--primary);
+  font-weight:800;
+}
+
+/* small text */
+.admdash-small { font-weight:800; color:#233f5f; }
+
+/* ---------- MAP HELPER (redundant safety) ---------- */
+.admdash-map-panel { position: relative; border-radius: 10px; overflow: hidden; }
+.admdash-map-legend { position: absolute; right: 12px; top: 12px; background: rgba(255,255,255,0.95); padding: 10px; border-radius: 8px; box-shadow: 0 6px 20px rgba(10,40,80,0.08); z-index: 1000; font-weight: 800; font-size: 13px; }
+.admdash-map-legend-row { display:flex; gap:8px; align-items:center; margin-top:6px; color:#29465b; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1100px) {
+  .admdash-main { grid-template-columns: 1fr; }
+  .admdash-main-right { order:2; }
+  .admdash-main-left { order:1; }
+  .admdash-header { padding:6px 4px; }
+}
+@media (max-width: 900px) {
+  .admdash-bed-main { flex-direction:column; }
+  .admdash-bed-actions { align-items:flex-start; min-width:unset; }
+  .admdash-bedcard-header { flex-direction:column; align-items:flex-start; gap:8px; }
+}
+@media (max-width: 420px) {
+  .admdash-kpi { min-width:64px; padding:6px 8px; }
+  .admdash-progress-number { min-width:34px; font-size:12px; }
+  .admdash-logo-img { height:36px; width:36px; }
+}
+
+/* ---------- Accessibility & focus ---------- */
+.admdash-btn:focus, .admdash-input:focus, .admdash-btn-outline:focus {
+  outline: 3px solid rgba(17,86,208,0.12);
+  outline-offset: 2px;
+  border-radius:8px;
+}
+
+/* End of AdminDashboard.css */

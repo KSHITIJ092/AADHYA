@@ -1,0 +1,6 @@
+timestamp,area_id,area_name,temperature_c,humidity,pm25,aqi_est,festival_flag,epidemic_summary
+2025-11-27T10:20:06.144803+00:00,MUM_CITY,Mumbai_City_Colaba,31.05,48,,,1,{}
+2025-11-27T10:20:08.045026+00:00,MUM_BANDRA,Mumbai_Suburban_Bandra,30.48,57,,,1,{}
+2025-11-27T10:20:08.987913+00:00,NAVI_VASHI,NaviMumbai_Vashi,30.96,51,,,1,{}
+2025-11-27T10:20:10.376970+00:00,KDMC_KALYAN,KDMC_Kalyan,32.73,100,,,1,{}
+2025-11-27T10:20:11.347100+00:00,THANE,Thane,32.74,95,,,1,{}

@@ -1,0 +1,180 @@
+/* src/pages/MedicalOps/MedicalOps.css
+   Unique prefix: medops-
+   Entire color palette switched to teal/indigo/violet for charts & badges
+*/
+
+/* root & typography */
+.medops-root {
+  font-family: Inter, "Segoe UI", Roboto, system-ui, Arial;
+  color: #0b2b3b;
+  background: linear-gradient(180deg,#f7fbff,#f3f8ff);
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+/* header */
+.medops-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+.medops-title { font-weight:900; font-size:18px; color:#07283f; }
+.medops-sub { font-size:13px; color:#4b6b84; margin-top:4px; }
+
+/* top small KPIs */
+.medops-top-stats { display:flex; gap:12px; align-items:center; }
+.medops-top-kpi { background:white; min-height: 50px;border-radius:10px; padding:8px 12px; box-shadow:0 8px 18px rgba(6,34,60,0.04); min-width:160px; text-align:center; }
+.medops-top-kpi-label { font-weight:800; color:#4b6b84; font-size:15px; }
+.medops-top-kpi-value { font-weight:900; color:#4353ff; font-size:20px; margin-top:8px; }
+
+/* vertical stack container */
+.medops-stack { display:flex; flex-direction:column; gap:12px; }
+
+/* card base */
+.medops-card {
+  background:white;
+  border-radius:12px;
+  padding:12px;
+  box-shadow: 0 12px 36px rgba(6,34,60,0.06);
+}
+.medops-card-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; gap:12px; }
+.medops-card-title { font-weight:900; color:#0b3a66; }
+.medops-card-sub { color:#5b718a; font-size:13px; }
+
+/* buttons */
+.medops-btn { padding:8px 10px; border-radius:8px; background:white; border:1px solid #e9f3fb; font-weight:800; cursor:pointer; color:#153656; }
+.medops-btn-ghost { background:transparent; border:1px solid #eef3ff; color:#4353ff; }
+.medops-btn-outline { background:transparent; border:1px solid #eef6fb; color:#00bfa6; }
+.medops-btn-primary { background: linear-gradient(180deg,#4353ff,#8e44ff); color:#fff; border:none; }
+
+/* Spark / mini chart class (fallback) */
+.medops-spark, .medops-spark-premium { display:block; }
+
+/* ---------------- DeptPrediction premium (colors changed) ---------------- */
+.medops-card-prediction-premium {
+  padding: 16px;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  border-radius:14px;
+  border:1px solid #eef6fb;
+  box-shadow: 0 18px 44px rgba(6,34,60,0.06);
+}
+.medops-premium-header { display:flex; justify-content:space-between; gap:10px; align-items:center; }
+.medops-card-title { font-weight:900; color:#07283f; font-size:16px; }
+.medops-card-sub { color:#5b718a; font-weight:800; font-size:13px; margin-top:4px; }
+
+.medops-pred-controls-premium { display:flex; gap:8px; align-items:center; }
+.medops-btn { cursor:pointer; font-weight:900; border-radius:8px; padding:8px 12px; border:1px solid transparent; background:#fff; color:#153656; }
+.medops-small { padding:6px 8px; font-size:13px; }
+
+/* list */
+.medops-pred-list-premium { display:flex; flex-direction:column; gap:12px; margin-top:12px; }
+.medops-pred-row-premium {
+  display:flex; gap:12px; align-items:center; padding:14px;
+  border-radius:12px; transition: transform .18s ease, box-shadow .18s ease;
+  background: linear-gradient(180deg,#ffffff,#fdfeff); border:1px solid #f3f8fb;
+}
+.medops-pred-row-premium:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(6,34,60,0.06); }
+
+/* left area */
+.medops-pred-left-premium { width:220px; flex:0 0 220px; }
+.medops-pred-dept-premium { font-weight:900; color:#07283f; font-size:15px; }
+.medops-pred-meta-premium { font-size:12px; color:#5b718a; margin-top:6px; }
+
+/* spark area */
+.medops-pred-spark-premium { flex:1; display:flex; align-items:center; justify-content:center; }
+
+/* right area */
+.medops-pred-right-premium { width:320px; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+
+/* badges (teal/indigo/violet) */
+.medops-badge-premium {
+  display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8px 12px;
+  border-radius:14px; min-width:94px; font-weight:900;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.02);
+}
+.medops-badge-top { font-size:13px; }
+.medops-badge-sub { font-size:11px; color:#335; margin-top:4px; opacity:0.85; }
+
+/* severity variants - updated */
+.medops-badge-critical { background: linear-gradient(180deg,#ffeef6,#ffdff6); color:#a91f5a; border:1px solid rgba(169,31,90,0.06); }
+.medops-badge-high { background: linear-gradient(180deg,#fff5f9,#ffe9fb); color:#8e44ff; border:1px solid rgba(142,68,255,0.06); }
+.medops-badge-watch { background: linear-gradient(180deg,#e8fff7,#dffbf5); color:#006a5f; border:1px solid rgba(0,191,166,0.06); }
+.medops-badge-ok { background: linear-gradient(180deg,#eafaf1,#f0fff9); color:#007a62; border:1px solid rgba(0,191,166,0.06); }
+
+.medops-pred-suggestion-premium { font-weight:800; color:#254b63; }
+.medops-pred-actions-premium { display:flex; gap:8px; }
+
+/* footer legend */
+.medops-pred-footer-premium {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:12px; padding-top:10px; border-top:1px solid #f1f7fb;
+  color:#6b7d91; font-weight:800; font-size:13px;
+}
+.medops-foot-legend { display:flex; gap:12px; align-items:center; }
+.medops-legend-dot { width:12px; height:8px; border-radius:6px; display:inline-block; }
+.medops-legend-critical { background: linear-gradient(180deg,#ffdff6,#ffbfe5); border:1px solid rgba(169,31,90,0.06); }
+.medops-legend-high { background: linear-gradient(180deg,#e9e6ff,#d6ccff); border:1px solid rgba(142,68,255,0.06); }
+.medops-legend-watch { background: linear-gradient(180deg,#e8fff7,#d2fff0); border:1px solid rgba(0,191,166,0.06); }
+.medops-legend-ok { background: linear-gradient(180deg,#e9fff3,#d2f7e6); border:1px solid rgba(46,138,74,0.06); }
+
+/* ---------------- BedManagement layout & colors ---------------- */
+.medops-card-beds .medops-beds-grid { display:flex; gap:12px; align-items:flex-start; }
+.medops-icu-forecast { flex:0 0 280px; background:linear-gradient(180deg,#fbfdff,#ffffff); padding:10px; border-radius:10px; border:1px solid #f1f7fb; }
+.medops-icu-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.medops-icu-title { font-weight:900; color:#07283f; font-size:13px; }
+.medops-icu-meta { color:#5b718a; font-size:12px; }
+
+/* ICU chart tuning */
+.medops-icu-chart { width: 100%; height:80px; display:block; }
+
+/* wards */
+.medops-wards-list { flex:1; display:flex; flex-direction:column; gap:10px; }
+.medops-ward-card { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; padding:10px; border-radius:10px; background:linear-gradient(180deg,#ffffff,#fbfdff); border:1px solid #f3f7fb; box-shadow:0 6px 18px rgba(6,34,60,0.03); }
+.medops-ward-left { min-width:140px; }
+.medops-ward-name { font-weight:900; color:#07283f; }
+.medops-ward-meta { color:#6b7d91; font-size:12px; margin-top:6px; }
+
+.medops-ward-stats { flex:1; display:flex; flex-direction:column; gap:8px; }
+.medops-progress-row { display:flex; align-items:center; gap:8px; }
+.medops-progress-label { min-width:70px; font-weight:800; color:#3b5569; font-size:13px; }
+.medops-progress-bar { flex:1; height:12px; background:#eef9f7; border-radius:10px; overflow:hidden; border:1px solid #eaf7f4; position:relative; }
+.medops-progress-fill { height:100%; border-radius:10px 0 0 10px; transition: width 420ms cubic-bezier(.2,.9,.3,1); }
+.medops-normal { background: linear-gradient(180deg,#cfeadf,#00bfa6); }
+.medops-moderate { background: linear-gradient(180deg,#ffeed8,#ffd08a); } /* keep warm warning */
+.medops-high { background: linear-gradient(180deg,#ffdfe9,#ffb6d6); } /* magenta-ish alert */
+.medops-critical { background: linear-gradient(180deg,#ffd7ee,#ff9fdc); } /* stronger magenta */
+
+.medops-progress-val { min-width:40px; font-weight:900; color:#102d4a; text-align:right; }
+
+.medops-mini-row { display:flex; gap:12px; color:#27465f; font-weight:800; }
+.medops-ward-actions { display:flex; gap:8px; align-items:center; }
+
+/* ---------------- Inbox ---------------- */
+.medops-inbox-list { display:flex; flex-direction:column; gap:8px; }
+.medops-inbox-row { display:flex; justify-content:space-between; gap:12px; padding:10px; border-radius:10px; background:linear-gradient(180deg,#ffffff,#fbfdff); border:1px solid #f3f7fb; }
+.medops-inbox-left { flex:1; }
+.medops-inbox-type { font-weight:900; color:#4353ff; font-size:13px; }
+.medops-inbox-title { font-weight:900; font-size:14px; color:#07283f; margin-top:6px; }
+.medops-inbox-body { color:#4b6b84; margin-top:6px; font-size:13px; }
+
+.medops-inbox-high { border-left:4px solid #8e44ff; }
+.medops-inbox-medium { border-left:4px solid #ffe08a; }
+.medops-inbox-low { border-left:4px solid #bfe0ff; }
+
+.medops-empty { color:#4b6b84; font-weight:800; padding:14px; text-align:center; }
+
+/* responsive */
+@media (max-width:1000px) {
+  .medops-beds-grid { flex-direction:column; }
+  .medops-icu-forecast { width:100%; }
+}
+
+/* compact responsiveness for premium prediction card */
+@media (max-width: 920px) {
+  .medops-pred-row-premium { flex-direction:column; align-items:stretch; gap:10px; }
+  .medops-pred-right-premium { width:100%; align-items:flex-start; flex-direction:row; justify-content:space-between; }
+  .medops-pred-left-premium { width:auto; }
+  .medops-pred-spark-premium { justify-content:flex-start; }
+}
+

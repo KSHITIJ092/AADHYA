@@ -1,0 +1,127 @@
+/* AdminActionsPanel.css
+   Scoped styles for AdminActionsPanel.jsx (updated for SVG graph)
+   prefix: admact-
+*/
+
+.admact-root {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 28px rgba(12,60,120,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", Arial;
+}
+
+/* header */
+.admact-header { display:flex; align-items:center; justify-content:space-between; padding-bottom:2px; }
+.admact-title { font-weight:900; color:#0b3a66; font-size:15px; }
+.admact-sub { font-size:12px; color:#5b718a; }
+
+/* analytics row */
+.admact-analytics { display:flex; gap:8px; align-items:center; justify-content:space-between; }
+.admact-analytic { background:#fbfdff; border-radius:8px; padding:8px 10px; min-width:30%; box-shadow: inset 0 -1px 0 rgba(12,60,120,0.02); }
+.admact-analytic-k { font-weight:800; color:#5b718a; font-size:12px; }
+.admact-analytic-v { font-weight:900; color:#113a58; font-size:16px; margin-top:4px; }
+
+/* forecast area */
+.admact-forecast { display:flex; gap:12px; align-items:flex-start; padding-top:2px; }
+.admact-forecast-left { flex:1; display:flex; flex-direction:column; gap:8px; }
+.admact-forecast-right { width:120px; display:flex; flex-direction:column; gap:6px; align-items:center; }
+
+/* select */
+.admact-select {
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #eef6fb;
+  background:#fbfdff;
+  font-weight:700;
+}
+
+/* peak */
+.admact-peak { margin-top:6px; padding:8px; background:#fbfdff; border-radius:8px; text-align:left; }
+.admact-peak-label { color:#6b7d91; font-weight:800; font-size:12px; }
+.admact-peak-value { font-weight:900; color:#0b3a66; }
+
+/* quick metric */
+.admact-quick-metric { text-align:center; padding:8px; background:#fff; border-radius:8px; width:100%; box-shadow: inset 0 -1px 0 rgba(12,60,120,0.02); }
+.admact-quick-label { font-weight:700; color:#6b7d91; font-size:12px; }
+.admact-quick-value { font-weight:900; font-size:18px; color:#0b3a66; }
+
+/* chart area wrapper */
+.admact-chart-area { display:flex; justify-content:center; align-items:center; padding:6px 4px; }
+
+/* SVG wrapper */
+.admact-svg-wrapper { position:relative; display:inline-block; }
+
+/* placeholder */
+.admact-vert-placeholder { display:flex; align-items:center; justify-content:center; color:#8aa0b4; font-weight:700; padding:40px; }
+
+/* tooltip */
+.admact-tooltip {
+  position:absolute;
+  top:8px;
+  transform:translateX(0);
+  background:#0b3a66;
+  color:white;
+  padding:8px 10px;
+  border-radius:8px;
+  font-weight:800;
+  font-size:12px;
+  min-width:120px;
+  pointer-events:none;
+  box-shadow: 0 8px 24px rgba(11,60,110,0.2);
+  z-index:1002;
+}
+.admact-tooltip-row { display:flex; justify-content:space-between; gap:8px; margin-bottom:4px; }
+.admact-tooltip-row:last-child { margin-bottom:0; }
+.admact-tooltip-k { color: #bcd6ff; font-weight:800; }
+.admact-tooltip-v { color:white; font-weight:900; }
+
+/* simulation controls */
+.admact-sim-controls { display:flex; flex-direction:column; gap:8px; padding-top:6px; }
+.admact-sim-row { display:flex; align-items:center; gap:8px; }
+.admact-label { font-weight:800; color:#27465f; font-size:13px; min-width:120px; }
+.admact-range { flex:1; height:8px; border-radius:10px; appearance:none; background:#e8f2ff; outline:none; }
+.admact-range::-webkit-slider-thumb { width:18px; height:18px; border-radius:50%; background:#1156d0; cursor:pointer; box-shadow: 0 2px 8px rgba(17,86,208,0.18); border:none; }
+.admact-range-value { font-weight:900; color:#0b3a66; width:48px; text-align:center; }
+
+/* checkbox row */
+.admact-checkbox-row { justify-content:flex-start; }
+.admact-checkbox { display:flex; gap:8px; align-items:center; font-weight:800; color:#345; }
+.admact-checkbox input { width:16px; height:16px; }
+
+/* buttons */
+.admact-btn { padding:10px 12px; border-radius:10px; font-weight:900; cursor:pointer; }
+.admact-btn-primary { background: linear-gradient(180deg,#1e6df0,#1156d0); color:white; border:none; width:100%; }
+.admact-btn-outline { background:transparent; border:1px solid #e6f1ff; color:#155fd6; padding:8px 10px; border-radius:8px; font-weight:800; }
+
+/* inventory block */
+.admact-inv { padding-top:6px; border-top:1px dashed #eef6fb; display:flex; flex-direction:column; gap:8px; }
+.admact-inv-title { font-weight:900; color:#0b3a66; }
+.admact-inv-list { display:flex; flex-direction:column; gap:8px; }
+.admact-inv-row { display:flex; justify-content:space-between; align-items:center; padding:8px; background:#fbfdff; border-radius:8px; }
+.admact-inv-info { display:flex; flex-direction:column; gap:4px; max-width:68%; }
+.admact-inv-name { font-weight:900; color:#153656; }
+.admact-inv-sub { color:#6b7d91; font-size:12px; }
+.admact-inv-qty { font-weight:900; color:#0b3a66; }
+
+/* inv actions */
+.admact-inv-actions { display:flex; gap:8px; margin-top:8px; }
+
+/* audit */
+.admact-audit { padding-top:8px; border-top:1px dashed #eef6fb; }
+.admact-audit-title { font-weight:1000; color:#27425c; padding: 12px;}
+.admact-audit-content { display:flex; flex-direction:column; gap:6px; margin-top:6px; }
+.admact-audit-row { display:flex; justify-content:space-between; color:#4b6b84; font-weight:700; }
+
+/* focus */
+.admact-select:focus, .admact-btn:focus { outline: 3px solid rgba(17,86,208,0.14); }
+
+/* responsive */
+@media (max-width: 1100px) {
+  .admact-root { width:100%; }
+  .admact-forecast { flex-direction:column; }
+  .admact-analytics { flex-direction:column; gap:6px; }
+}
